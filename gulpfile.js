@@ -55,9 +55,13 @@ function devJSON(){
 	return src([`${options.paths.src.json}/**/*`]).pipe(dest(options.paths.dist.json));
 }
 
+function devSeparate(){
+	return src([`${options.paths.src.separate}/**/*`]).pipe(dest(options.paths.dist.separate));
+}
+
 function devStyles(){
 	const tailwindcss = require('tailwindcss'); 
-	return src(`${options.paths.src.css}/**/*`)
+	return src([`${options.paths.src.css}/**/*`])
 		.pipe(postcss([
 			tailwindcss(options.config.tailwindjs),
 			require('autoprefixer'),
@@ -70,7 +74,6 @@ function devScripts(){
 	return src([
 		`${options.paths.src.js}/libs/**/*.js`,
 		`${options.paths.src.js}/**/*.js`,
-		`!${options.paths.src.js}/**/external/*`
 	]).pipe(concat({ path: 'custom.js'})).pipe(dest(options.paths.dist.js));
 }
 
@@ -80,11 +83,12 @@ function watchFiles(){
 	watch([options.config.tailwindjs, `${options.paths.src.css}/**/*`],series(devStyles, previewReload));
 	watch(`${options.paths.src.js}/**/*.js`,series(devScripts, previewReload));
 	watch(`${options.paths.src.img}/**/*`,series(devImages, previewReload));
+	watch(`${options.paths.src.separate}/**/*`,series(devSeparate, previewReload));
   }
 
 exports.default = series( // npm run dev
 	devClean, // Clean Dist Folder
-	parallel(devStyles, devScripts, devHTML, devManifest, devImages, devJSON), //Run All tasks in parallel
+	parallel(devStyles, devScripts, devHTML, devManifest, devImages, devJSON, devSeparate), //Run All tasks in parallel
 	livePreview, // Live Preview Build
 	watchFiles // Watch for Live Changes
 );
@@ -108,6 +112,10 @@ function prodImages(){
 
 function prodJSON(){
 	return src([`${options.paths.dist.json}/**/*`]).pipe(dest(options.paths.build.json));
+}
+
+function prodSeparate(){
+	return src([`${options.paths.dist.separate}/**/*`]).pipe(dest(options.paths.build.separate));
 }
 
 function prodClean(){
@@ -142,5 +150,5 @@ function prodScripts(){
 
 exports.prod = series(
 	prodClean, // Clean Build Folder
-	parallel(prodStyles, prodScripts, prodHTML, prodManifest, prodImages, prodJSON), //Run All tasks in parallel
+	parallel(prodStyles, prodScripts, prodHTML, prodManifest, prodImages, prodJSON, prodSeparate), //Run All tasks in parallel
 );

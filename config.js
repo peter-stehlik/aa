@@ -10,21 +10,24 @@ module.exports = {
 			css: "./src/assets/css",
 			js: "./src/assets/js",
 			img: "./src/assets/img",
-			json: "./src/assets/json"
+			json: "./src/assets/json",
+			separate: "./src/assets/separate"
 		},
 		dist: {
 			base: "./dist",
 			css: "./dist/assets/css",
 			js: "./dist/assets/js",
 			img: "./dist/assets/img",
-			json: "./dist/assets/json"
+			json: "./dist/assets/json",
+			separate: "./dist/assets/separate"
 		},
 		build: {
 			base: "./build",
 			css: "./build/assets/css",
 			js: "./build/assets/js",
 			img: "./build/assets/img",
-			json: "./build/assets/json"
+			json: "./build/assets/json",
+			separate: "./build/assets/separate"
 		}
 	}
 }
