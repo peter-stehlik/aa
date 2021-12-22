@@ -1,0 +1,38 @@
+html,
+body {
+	@apply font-sans text-base;
+}
+
+.nav li,
+.nav li a {
+	@apply px-2 text-tertiary;
+}
+.nav li a:hover {
+	@apply text-quaternary;
+}
+
+li.sub-menu-service a {
+	@apply pr-4 mr-2;
+	background: url('../img/arrow-down-dark.svg') no-repeat center right;
+}
+li.sub-menu-service:hover a,
+li.sub-menu-service a.is-active {
+	@apply text-secondary;
+	background: url('../img/arrow-down-light.svg') no-repeat center right;
+}
+
+.js-langs-wrap a {
+	transition: all 0.15s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+	transform: translateY(0px);
+}
+.js-langs-wrap.is-opened a:first-child {
+	transform: translateY(50px);
+}
+.js-langs-wrap.is-opened a:nth-child(2) {
+	transition-duration: 300ms;
+	transform: translateY(100px);
+}
+.js-langs-wrap.is-opened a:nth-child(3) {
+	transition-duration: 450ms;
+	transform: translateY(150px);
+}
