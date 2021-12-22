@@ -1,11 +1,28 @@
+/*
+*	GENERAL
+*/
 html,
 body {
 	@apply font-sans text-base text-gray-900;
 }
 
+/*
+*	WP NAVIGATION
+*/
+.nav-wrap {
+	background: #fff url('../img/aardwark-pink.svg') no-repeat bottom right -150px;
+	background-size: 300px 150px;
+	transform: translateX(100%);
+}
+.nav-wrap.is-opened {
+	transform: translateX(0%);
+}
+.nav-wrap.is-ready {
+	transform: translateX(-100%);
+}
 .nav li,
 .nav li a {
-	@apply px-2 text-tertiary;
+	@apply flex lg:inline-flex w-full lg:w-auto px-2 py-2 lg:py-4 lg:py-0 text-tertiary text-xl lg:text-base;
 }
 .nav li a:hover {
 	@apply text-quaternary;
@@ -13,14 +30,74 @@ body {
 
 li.sub-menu-service a {
 	@apply pr-4 mr-2;
-	background: url('../img/arrow-down-dark.svg') no-repeat center right;
+	background: url('../img/arrow-full-right-medium.svg') no-repeat center right;
+	background-size: 30px;
 }
 li.sub-menu-service:hover a,
 li.sub-menu-service a.is-active {
 	@apply text-secondary;
-	background: url('../img/arrow-down-light.svg') no-repeat center right;
+}
+.sub-nav-services {
+	background: #fff url('../img/aardwark-pink.svg') no-repeat bottom left -150px;
+	background-size: 300px 150px;
+	transform: translateX(200%);
+}
+.sub-nav-services.is-ready {
+	transform: translateX(100%);
+}
+.sub-nav-services.is-opened {
+	transform: translateX(0%);
 }
 
+@screen lg {
+	.nav-wrap,
+	.sub-nav-services {
+		background: 0;
+		transform: translateX(0%);
+	}
+	li.sub-menu-service a {
+		background: url('../img/arrow-down-dark.svg') no-repeat center right;
+	}
+	li.sub-menu-service:hover a,
+	li.sub-menu-service a.is-active {
+		background: url('../img/arrow-down-light.svg') no-repeat center right;
+	}
+	.sub-nav-services.is-active {
+		@apply lg:z-10 lg:opacity-100 lg:translate-y-0;
+	}
+	.sub-nav-services.is-hidden {
+		@apply lg:hidden;
+	}
+}
+
+/*
+*	MOBILE NAVIGATION
+*/
+.hamburger__bar {
+	stroke-width: 10%;
+	transition-property: transform;
+	transition-duration: 0.3s;
+	transform-origin: center;
+}
+.hamburger__bar--top {
+	transform: translateY(-30%);
+}
+.hamburger__bar--bottom {
+	transform: translateY(30%);
+}
+.is-opened .hamburger__bar--top {
+	transform: rotate(45deg);
+}
+.is-opened .hamburger__bar--middle {
+	transform: rotate(-45deg);
+}
+.is-opened .hamburger__bar--bottom {
+	transform: scaleX(0.01);
+}
+
+/*
+*	LANG TOGGLER
+*/
 .js-langs-wrap a {
 	transition: all 0.15s cubic-bezier(0.25, 0.1, 0.25, 1.0);
 	transform: translateY(0px);
@@ -36,3 +113,4 @@ li.sub-menu-service a.is-active {
 	transition-duration: 450ms;
 	transform: translateY(150px);
 }
+

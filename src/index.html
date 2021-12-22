@@ -32,7 +32,7 @@
 <body class="pt-24">
 	<header class="fixed top-0 left-0 z-40 w-full py-2 lg:py-7 bg-white transition-all">
 		<div class="relative z-20 container flex justify-between items-center">
-			<a href="#">
+			<a class="relative z-20" href="#">
 				<svg class="relative -left-4 lg:left-0" width="198" x="0px" y="0px" viewBox="0 0 425.2 113.4">
 					<g>
 						<path fill="#D2AADC" d="M380.3,74.9c0-4.1-2.2-7.9-7.9-7.9h-5.2v13.8h-9.5V27.9h9.5V58h5.2c5.7,0,7.9-3.9,7.9-8v-5.8h9.5v7.5
@@ -71,83 +71,85 @@
 				</svg>
 			</a>
 
-			<a class="js-nav-toggler flex lg:hidden" href="#">
-				<svg class="w-10 h-8">
+			<a class="relative z-20 js-nav-toggler flex lg:hidden" href="javascript:void(0);">
+				<svg class="w-10 h-8" id="hamburger">
 					<line stroke="#6846A0" x1="0" y1="50%" x2="100%" y2="50%" class="hamburger__bar hamburger__bar--top" />
-					<line stroke="#A06DC0" x1="0" y1="50%" x2="100%" y2="50%" class="hamburger__bar hamburger__bar--mid" />
-					<line stroke="#CCA0D7" x1="50%" y1="50%" x2="100%" y2="50%" class="hamburger__bar hamburger__bar--bot" />
+					<line stroke="#A06DC0" x1="0" y1="50%" x2="100%" y2="50%" class="hamburger__bar hamburger__bar--middle" />
+					<line stroke="#CCA0D7" x1="50%" y1="50%" x2="100%" y2="50%" class="hamburger__bar hamburger__bar--bottom" />
 				</svg>			  
 			</a>
 
-			<style>
-				.hamburger__bar {
-					stroke-width: 10%;
-				}
-				.hamburger__bar--top {
-					transform: translateY(-30%);
-				}
-				.hamburger__bar--bot {
-					transform: translateY(30%);
-				}
-			</style>
-
-			<div class="hidden lg:flex justify-center items-center">
-				<ul class="nav flex ml-4">
+			<div class="nav-wrap fixed top-0 left-0 w-full h-screen pt-20 px-8 z-10 lg:relative lg:flex lg:justify-center lg:items-center lg:w-auto lg:h-auto lg:pt-0 lg:px-0 transition-all duration-500">
+				<ul class="nav flex flex-col lg:flex-row mb-4 lg:mb-0 lg:ml-4">
 					<li class="sub-menu-service"><a href="javascript:void(0);">Služby </a></li>
 					<li><a href="#">O nás</a></li>
 					<li><a href="#">Kontakt</a></li>
 					<li><a href="#">Kariéra</a></li>
 				</ul>
 
-				<a class="flex items-center justify-center ml-4 p-2 pl-4 bg-primary hover:bg-secondary text-white font-semibold rounded-full transition-colors" href="#">
+				<a class="inline-flex items-center justify-center mb-8 lg:mb-0 lg:ml-4 p-2 pl-4 bg-primary hover:bg-secondary text-white font-semibold rounded-full transition-colors" href="#">
 					Voľné pozície 
 					<span class="flex justify-center items-center w-7 h-7 ml-2 rounded-full font-normal bg-secondary">10</span>
 				</a>
 
-				<div class="relative flex ml-2">
-					<a class="js-lang-toggler relative z-10 flex justify-center items-center w-11 h-11 text-tertiary bg-gray-100 rounded-full font-semibold" href="javascript:void(0);">Sk</a>
+				<div class="relative flex lg:ml-2">
+					<a class="js-lang-toggler relative z-10 hidden lg:flex justify-center items-center w-11 h-11 text-tertiary bg-gray-100 rounded-full font-semibold" href="javascript:void(0);">Sk</a>
 
-					<div class="js-langs-wrap absolute left-0 top-0">
-						<a class="absolute top-0 left-0 flex justify-center items-center w-11 h-11 text-tertiary bg-gray-100 hover:bg-gray-300 rounded-full font-semibold" href="#">En</a>
-						<a class="absolute top-0 left-0 flex justify-center items-center w-11 h-11 text-tertiary bg-gray-100 hover:bg-gray-300 rounded-full font-semibold" href="#">De</a>
-						<a class="absolute top-0 left-0 flex justify-center items-center w-11 h-11 text-tertiary bg-gray-100 hover:bg-gray-300 rounded-full font-semibold" href="#">Cz</a>
+					<div class="js-langs-wrap relative lg:absolute left-0 top-0 flex justify-start w-full">
+						<a class="lg:absolute top-0 left-0 flex justify-center items-center w-11 h-11 mr-4 lg:mr-0 text-tertiary bg-gray-100 hover:bg-gray-300 rounded-full font-semibold" href="#">En</a>
+						<a class="lg:absolute top-0 left-0 flex justify-center items-center w-11 h-11 mr-4 lg:mr-0 text-tertiary bg-gray-100 hover:bg-gray-300 rounded-full font-semibold" href="#">De</a>
+						<a class="lg:absolute top-0 left-0 flex justify-center items-center w-11 h-11 mr-4 lg:mr-0 text-tertiary bg-gray-100 hover:bg-gray-300 rounded-full font-semibold" href="#">Cz</a>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="sub-nav-services absolute left-0 top-full hidden w-full opacity-0 -translate-y-4 transition-all after:block after:w-full after:h-screen after:bg-primary after:bg-opacity-90">
-			<div class="container relative bg-white before:absolute before:left-[-1000px] before:-top-px before:h-full before:bg-white before:w-[3000px]">
-				<div class="relative px-16 py-12 border-gray-400 border-t border-dotted">
-					<div class="flex justify-center items-center">
-						<a class="flex flex-1 flex-col justify-center items-center p-4 text-primary hover:text-green" href="#">
+		<div class="sub-nav-services fixed lg:absolute left-0 top-0 lg:top-full lg:-z-10 lg:hidden w-full h-screen lg:h-auto pt-20 lg:pt-0 px-8 lg:px-0 bg-white lg:bg-transparent lg:opacity-0 lg:-translate-y-4 transition-all duration-500 lg:after:block after:w-full after:h-screen after:bg-primary after:bg-opacity-90">
+			<div class="container relative bg-white lg:before:absolute before:left-[-1000px] before:-top-px before:h-full before:bg-white before:w-[3000px]">
+				<div class="relative lg:px-16 lg:py-12 lg:border-gray-400 lg:border-t lg:border-dotted">
+					<a class="js-back-mob-nav relative inline-flex lg:hidden mt-4 ml-8 pl-4 text-tertiary text-xl tracking-wide" href="javascript:void(0);">
+						<svg class="absolute -left-8 top-px w-8 rotate-180 transition-transform duration-500" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M11.7668 6.31226H0.857178" stroke="#6846A0"/>
+							<path d="M7.40292 10.6761L11.7668 6.31226L7.40292 1.9484" stroke="#6846A0"/>
+						</svg>
+							
+						Späť
+					</a>
+
+					<div class="lg:flex justify-center items-center -mx-4 lg:mx-0">
+						<a class="flex flex-1 flex-col justify-center items-center w-1/2 lg:w-auto float-left lg:float-none p-2 lg:p-4 text-primary hover:text-green" href="#">
 							<img src="./assets/img/service-bpm.png" width="144" height="120" alt="">
 
-							<span class="flex justify-center items-center h-12 text-center">BPM - procesná automatizácia </span>
+							<span class="flex justify-center items-center h-16 lg:h-12 text-center">BPM - procesná automatizácia </span>
 						</a>
 						
-						<a class="flex flex-1 flex-col items-center p-4 border-l text-primary hover:text-green" href="#">
+						<a class="flex flex-1 flex-col justify-center items-center w-1/2 lg:w-auto float-left lg:float-none p-2 lg:p-4 lg:border-l text-primary hover:text-green" href="#">
 							<img src="./assets/img/service-it.png" width="144" height="120" alt="">
 
-							<span class="flex justify-center items-center h-12 text-center">IT vývoj </span>
+							<span class="flex justify-center items-center h-16 lg:h-12 text-center">IT vývoj </span>
 						</a>
 
-						<a class="flex flex-1 flex-col items-center p-4 border-l text-primary hover:text-green" href="#">
+						<a class="flex flex-1 flex-col justify-center items-center w-1/2 lg:w-auto float-left lg:float-none p-2 lg:p-4 lg:border-l text-primary hover:text-green" href="#">
 							<img src="./assets/img/service-devops.png" width="144" height="120" alt="">
 
-							<span class="flex justify-center items-center h-12 text-center">DevOps a Cloud </span>
+							<span class="flex justify-center items-center h-16 lg:h-12 text-center">DevOps a Cloud </span>
 						</a>
 
-						<a class="flex flex-1 flex-col items-center p-4 border-l text-primary hover:text-green" href="#">
+						<a class="flex flex-1 flex-col justify-center items-center w-1/2 lg:w-auto float-left lg:float-none p-2 lg:p-4 lg:border-l text-primary hover:text-green" href="#">
 							<img src="./assets/img/service-outsourcing.png" width="144" height="120" alt="">
 
-							<span class="flex justify-center items-center h-12 text-center">IT Outsourcing </span>
+							<span class="flex justify-center items-center h-16 lg:h-12 text-center">IT Outsourcing </span>
 						</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</header>
+
+	<a class="fixed bottom-0 left-0 z-10 inline-flex items-center justify-center lg:hidden w-full p-2 py-3 bg-primary hover:bg-secondary text-white font-semibold transition-colors" href="#">
+		Voľné pozície 
+		<span class="flex justify-center items-center w-7 h-7 ml-2 rounded-full font-normal bg-secondary">10</span>
+	</a>
 
 	<div class="container">
 		<div class="my-8 max-h-96" id="ae"></div>
