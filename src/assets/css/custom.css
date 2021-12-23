@@ -5,6 +5,15 @@ html,
 body {
 	@apply font-sans text-base text-gray-900;
 }
+p a {
+	@apply text-primary border-b border-primary transition;
+}
+p a:hover {
+	@apply text-quaternary border-none;
+}
+p a:focus {
+	@apply text-green;
+}
 
 /*
 *	WP NAVIGATION

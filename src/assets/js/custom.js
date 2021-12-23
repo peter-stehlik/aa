@@ -95,6 +95,22 @@ let AA = {
 			AA.helperCloseMobNav();
 		}, 700);
 	},
+	whenInViewport: () => {
+		let $homeService = document.querySelectorAll(".home-service");
+
+		let homeService = ($el) => {
+		  let rect = $el.getBoundingClientRect();
+	
+		  if (rect.top >= 0 && rect.bottom - 100 <= (window.innerHeight || document.documentElement.clientHeight)) {
+			if (!$el.querySelector(".home-service__line").classList.contains("w-full")) {
+			  $el.querySelector(".home-service__line").classList.remove("w-px");
+			  $el.querySelector(".home-service__line").classList.add("w-full");
+			}
+		  }
+		}
+	
+		$homeService.forEach((el) => homeService(el));	
+	},
 }
 
 AA.toggleLangs();
@@ -103,6 +119,7 @@ AA.toggleMobNav();
 
 document.addEventListener('scroll', function(e) {
 	AA.tidyHeader();
+	AA.whenInViewport();
 });
 
 window.addEventListener('resize', AA.clearHeaderOnResize);

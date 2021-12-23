@@ -146,13 +146,13 @@
 		</div>
 	</header>
 
-	<a class="fixed bottom-0 left-0 z-10 inline-flex items-center justify-center lg:hidden w-full p-2 py-3 bg-primary hover:bg-secondary text-white font-semibold transition-colors" href="#">
+	<a class="fixed bottom-0 left-0 z-20 inline-flex items-center justify-center lg:hidden w-full p-2 py-3 bg-secondary hover:bg-primary focus:bg-green text-white font-semibold transition-colors" href="#">
 		Voľné pozície 
-		<span class="flex justify-center items-center w-7 h-7 ml-2 rounded-full font-normal bg-secondary">10</span>
+		<span class="flex justify-center items-center w-7 h-7 ml-2 rounded-full font-normal bg-primary">10</span>
 	</a>
 
-	<div class="container">
-		<div class="my-8 max-h-96" id="ae"></div>
+	<div class="container overflow-hidden">
+		<div class="-mx-5 lg:mx-0 mb-8 lg:my-8 max-h-96" id="ae"></div>
 
 		<script src="./assets/separate/lottie.min.js"></script>
 		<script>
@@ -166,23 +166,161 @@
 			})
 		</script>
 
-		<div class="max-w-2xl mx-auto text-center">
-			<p class="mb-8 text-lg text-secondary">Aardwark</p>
+		<div class="max-w-2xl mx-auto lg:text-center">
+			<p class="mb-4 lg:mb-8 text-lg text-secondary">Aardwark</p>
 
-			<h1 class="mb-10 text-primary text-6xl tracking-wide">Špecialisti na Enterprise IT riešenia</h1>
+			<h1 class="mb-4 lg:mb-10 text-primary text-3xl lg:text-6xl tracking-wide">Špecialisti na Enterprise IT riešenia</h1>
 			
-			<p class="max-w-lg mx-auto mb-10 tracking-wide">Sme technologická a konzultačná spoločnosť. 👋 Už viac ako 10 rokov tvoríme inovatívne a funkčné IT riešenia, ktoré pomáhajú našim klientom napredovať a rásť. </p>
+			<p class="max-w-lg mx-auto mb-5 lg:mb-10 text-lg tracking-wide">Sme technologická a konzultačná spoločnosť. 👋 Už viac ako 10 rokov tvoríme inovatívne a funkčné IT riešenia, ktoré pomáhajú našim klientom napredovať a rásť. </p>
 
-			<a class="inline-flex justify-center items-center min-w-[250px] px-8 py-4 mb-10 rounded-full bg-primary hover:bg-secondary focus:bg-green text-white font-semibold transition-colors" href="#">Naše služby</a>
+			<a class="inline-flex justify-center items-center min-w-[250px] px-8 py-4 mb-5 lg:mb-10 rounded-full bg-primary hover:bg-secondary focus:bg-green text-white font-semibold transition-colors" href="#">Naše služby</a>
 
-			<p class="mb-6 text-secondary text-xl tracking-wide"><strong>90+ odborníkov.</strong> Už od roku 2010</p>
+			<p class="mb-4 lg:mb-6 text-secondary text-xl tracking-wide"><strong>90+ odborníkov.</strong> Už od roku 2010</p>
 		</div>
 
-		<div class="lg:flex lg:justify-center lg:items-center mb-10">
-			<img class="m-4" src="./assets/img/client1.png" alt="">
-			<img class="m-4" src="./assets/img/client2.png" alt="">
-			<img class="m-4" src="./assets/img/client3.png" alt="">
+		<div class="w-full mb-10 overflow-scroll">
+			<div class="whitespace-nowrap lg:flex lg:justify-center lg:items-center">
+				<img class="inline-flex m-2 lg:m-4 grayscale" src="./assets/img/client1.png" alt="">
+				<img class="inline-flex m-2 lg:m-4 grayscale" src="./assets/img/client2.png" alt="">
+				<img class="inline-flex m-2 lg:m-4 grayscale" src="./assets/img/client3.png" alt="">
+			</div>
 		</div>
+
+		<hr class="border-dotted border-gray-400">
+
+		<h2 class="mb-4 mt-12 lg:mt-16 lg:text-center text-2xl lg:text-5xl text-primary tracking-wide" id="nase-sluzby">Naše služby</h2>
+
+		<p class="mb-8 lg:mb-12 lg:text-center text-lg text-gray-400 tracking-wide">Navrhujeme a realizujeme funkčné IT riešenia na mieru</p>
+
+		<section class="home-service relative grid grid-cols-4 grid-row-2 px-4 py-8 lg:py-8 lg:px-12 -mx-4 lg:mx-0 lg:mb-8 lg:rounded-lg bg-secondary text-white hover:drop-shadow-xl hover:-translate-y-1 transition-transform duration-500" id="bpm">
+			<div class="col-span-2 lg:col-span-3">
+				<h3 class="mb-2 text-xl lg:text-3xl tracking-wide">BPM - procesná automatizácia </h3>
+					
+				<p class="lg:mb-8 text-base lg:text-lg opacity-80 tracking-wide">Získajte kontrolu nad svojimi firemnými procesmi so službou BPM</p>
+			</div>
+			
+			<div class="col-span-2 lg:col-span-1 lg:row-span-2">
+				<img src="./assets/img/service-bpm-medium.png" alt="">
+			</div>
+			
+			<div class="col-span-4 lg:col-span-3">
+				<div class="w-full lg:w-10/12 mt-8 lg:mt-0">
+					<hr class="home-service__line w-px mb-8 lg:mb-12 opacity-50 transition-all duration-1000">
+				</div>
+				
+				<div class="flex justify-start items-center">
+					<figure class="relative left-3 mr-8 after:absolute after:top-0 after:left-0 after:z-10 after:w-full after:h-full after:border after:border-white after:rounded-full">
+						<img class="relative -left-3 rounded-full" src="./assets/img/tim-bachnak.png" alt="">	
+					</figure>
+
+					<p class="text-sm tracking-wide">
+						<strong>Zoltán Bachňák</strong>
+						<span> / BPM Lead</span>
+					</p>
+				</div>
+			</div>
+
+			<a class="absolute left-0 top-0 w-full h-full" href=""></a>
+		</section>
+		
+		<section class="home-service relative grid grid-cols-4 grid-row-2 px-4 py-8 lg:py-8 lg:px-12 -mx-4 lg:mx-0 lg:mb-8 lg:rounded-lg bg-green text-white hover:drop-shadow-xl hover:-translate-y-1 transition-transform duration-500" id="it">
+			<div class="col-span-2 lg:col-span-3">
+				<h3 class="mb-2 text-xl lg:text-3xl tracking-wide">IT vývoj</h3>
+					
+				<p class="lg:mb-8 text-base lg:text-lg opacity-80 tracking-wide">Realizácia kompletného IT projektu od úvodnej fázy až po úspešný koniec</p>
+			</div>
+			
+			<div class="col-span-2 lg:col-span-1 lg:row-span-2">
+				<img src="./assets/img/service-it-medium.png" alt="">
+			</div>
+			
+			<div class="col-span-4 lg:col-span-3">
+				<div class="w-full lg:w-10/12 mt-8 lg:mt-0">
+					<hr class="home-service__line w-px mb-8 lg:mb-12 opacity-50 transition-all duration-1000">
+				</div>
+				
+				<div class="flex justify-start items-center">
+					<figure class="relative left-3 mr-8 after:absolute after:top-0 after:left-0 after:z-10 after:w-full after:h-full after:border after:border-white after:rounded-full">
+						<img class="relative -left-3 rounded-full" src="./assets/img/tim-holecka.png" alt="">	
+					</figure>
+
+					<p class="text-sm tracking-wide">
+						<strong>Michal Holečka</strong>
+						<span> / IT Development Lead</span>
+					</p>
+				</div>
+			</div>
+
+			<a class="absolute left-0 top-0 w-full h-full" href=""></a>
+		</section>
+		
+		<section class="home-service relative grid grid-cols-4 grid-row-2 px-4 py-8 lg:py-8 lg:px-12 -mx-4 lg:mx-0 lg:mb-8 lg:rounded-lg bg-quaternary text-white hover:drop-shadow-xl hover:-translate-y-1 transition-transform duration-500" id="devops">
+			<div class="col-span-2 lg:col-span-3">
+				<h3 class="mb-2 text-xl lg:text-3xl tracking-wide">DevOps a Cloud</h3>
+					
+				<p class="lg:mb-8 text-base lg:text-lg opacity-80 tracking-wide">Komplexné služby pre produktívnu spoluprácu vašich tímov v spoločnosti</p>
+			</div>
+			
+			<div class="col-span-2 lg:col-span-1 lg:row-span-2">
+				<img src="./assets/img/service-devops-medium.png" alt="">
+			</div>
+			
+			<div class="col-span-4 lg:col-span-3">
+				<div class="w-full lg:w-10/12 mt-8 lg:mt-0">
+					<hr class="home-service__line w-px mb-8 lg:mb-12 opacity-50 transition-all duration-1000">
+				</div>
+				
+				<div class="flex justify-start items-center">
+					<figure class="relative left-3 mr-8 after:absolute after:top-0 after:left-0 after:z-10 after:w-full after:h-full after:border after:border-white after:rounded-full">
+						<img class="relative -left-3 rounded-full" src="./assets/img/placeholder.png" alt="">
+					</figure>
+
+					<p class="text-sm tracking-wide">
+						<strong>Gabriel Olekšák</strong>
+						<span> / DevOps and Cloud Lead</span>
+					</p>
+				</div>
+			</div>
+
+			<a class="absolute left-0 top-0 w-full h-full" href=""></a>
+		</section>
+		
+		<section class="home-service relative grid grid-cols-4 grid-row-2 px-4 py-8 lg:py-8 lg:px-12 -mx-4 lg:mx-0 lg:mb-8 lg:rounded-lg bg-primary text-white hover:drop-shadow-xl hover:-translate-y-1 transition-transform duration-500" id="outsourcing">
+			<div class="col-span-2 lg:col-span-3">
+				<h3 class="mb-2 text-xl lg:text-3xl tracking-wide">IT Outsourcing</h3>
+					
+				<p class="lg:mb-8 text-base lg:text-lg opacity-80 tracking-wide">Zabezpečíme vám komplexný tím skúsených expertov</p>
+			</div>
+			
+			<div class="col-span-2 lg:col-span-1 lg:row-span-2">
+				<img src="./assets/img/service-outsourcing-medium.png" alt="">
+			</div>
+			
+			<div class="col-span-4 lg:col-span-3">
+				<div class="w-full lg:w-10/12 mt-8 lg:mt-0">
+					<hr class="home-service__line w-px mb-8 lg:mb-12 opacity-50 transition-all duration-1000">
+				</div>
+				
+				<div class="flex justify-start items-center">
+					<figure class="relative left-3 mr-8 after:absolute after:top-0 after:left-0 after:z-10 after:w-full after:h-full after:border after:border-white after:rounded-full">
+						<img class="relative -left-3 rounded-full" src="./assets/img/tim-kontris.png" alt="">
+					</figure>
+
+					<p class="text-sm tracking-wide">
+						<strong>Peter Kontriš </strong>
+						<span> / Outsourcing & HR Lead</span>
+					</p>
+				</div>
+			</div>
+
+			<a class="absolute left-0 top-0 w-full h-full" href=""></a>
+		</section>
+
+		<div class="max-w-2xl mx-auto my-12">
+			<p class="lg:text-center text-lg tracking-wide">Ak ste nenašli v zozname služieb to, čo hľadáte, neváhajte nás kontaktovať. <br> Pre vašu spoločnosť vytvoríme <a href="#">IT riešenia na mieru</a>.</p>
+		</div>
+
+		<hr class="border-dotted border-gray-400">
 	</div>
 
 	<div class="extraCss py-2 shadow-lg shadow-grey-400"></div>
