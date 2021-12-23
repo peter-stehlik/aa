@@ -146,10 +146,12 @@
 		</div>
 	</header>
 
-	<a class="fixed bottom-0 left-0 z-20 inline-flex items-center justify-center lg:hidden w-full p-2 py-3 bg-secondary hover:bg-primary focus:bg-green text-white font-semibold transition-colors" href="#">
-		Voľné pozície 
-		<span class="flex justify-center items-center w-7 h-7 ml-2 rounded-full font-normal bg-primary">10</span>
-	</a>
+	<div class="fixed bottom-0 left-0 z-20 flex items-center justify-center lg:hidden w-full p-3 shadow-[0_-4px_6px_-4px_rgba(0,0,0,0.3)] bg-white">
+		<a class="inline-flex items-center justify-center p-2 pl-4 bg-primary hover:bg-secondary text-white font-semibold rounded-full transition-colors" href="#">
+			Voľné pozície 
+			<span class="flex justify-center items-center w-7 h-7 ml-2 rounded-full font-normal bg-secondary">10</span>
+		</a>
+	</div>
 
 	<div class="container overflow-hidden">
 		<div class="-mx-5 lg:mx-0 mb-8 lg:my-8 max-h-96" id="ae"></div>
@@ -188,11 +190,13 @@
 
 		<hr class="border-dotted border-gray-400">
 
-		<h2 class="mb-4 mt-12 lg:mt-16 lg:text-center text-2xl lg:text-5xl text-primary tracking-wide" id="nase-sluzby">Naše služby</h2>
+		<div class="max-w-2xl mx-auto">
+			<h2 class="mb-4 mt-12 lg:mt-16 lg:text-center text-2xl lg:text-5xl text-primary tracking-wide" id="nase-sluzby">Naše služby</h2>
+			
+			<p class="mb-8 lg:mb-12 lg:text-center text-lg text-gray-400 tracking-wide">Navrhujeme a realizujeme funkčné IT riešenia na mieru</p>
+		</div>
 
-		<p class="mb-8 lg:mb-12 lg:text-center text-lg text-gray-400 tracking-wide">Navrhujeme a realizujeme funkčné IT riešenia na mieru</p>
-
-		<section class="home-service relative grid grid-cols-4 grid-row-2 px-4 py-8 lg:py-8 lg:px-12 -mx-4 lg:mx-0 lg:mb-8 lg:rounded-lg bg-secondary text-white hover:drop-shadow-xl hover:-translate-y-1 transition-transform duration-500" id="bpm">
+		<section class="home-service relative grid grid-cols-4 grid-row-2 px-4 py-8 lg:py-8 lg:px-12 mb-4 lg:mb-8 rounded-lg bg-secondary text-white hover:drop-shadow-xl hover:-translate-y-1 transition-transform duration-500" id="bpm">
 			<div class="col-span-2 lg:col-span-3">
 				<h3 class="mb-2 text-xl lg:text-3xl tracking-wide">BPM - procesná automatizácia </h3>
 					
@@ -214,8 +218,8 @@
 					</figure>
 
 					<p class="text-sm tracking-wide">
-						<strong>Zoltán Bachňák</strong>
-						<span> / BPM Lead</span>
+						<strong class="block md:inline">Zoltán Bachňák </strong>
+						<span><span class="hidden md:inline"> / </span>BPM Lead</span>
 					</p>
 				</div>
 			</div>
@@ -223,7 +227,7 @@
 			<a class="absolute left-0 top-0 w-full h-full" href=""></a>
 		</section>
 		
-		<section class="home-service relative grid grid-cols-4 grid-row-2 px-4 py-8 lg:py-8 lg:px-12 -mx-4 lg:mx-0 lg:mb-8 lg:rounded-lg bg-green text-white hover:drop-shadow-xl hover:-translate-y-1 transition-transform duration-500" id="it">
+		<section class="home-service relative grid grid-cols-4 grid-row-2 px-4 py-8 lg:py-8 lg:px-12 mb-4 lg:mb-8 rounded-lg bg-green text-white hover:drop-shadow-xl hover:-translate-y-1 transition-transform duration-500" id="it">
 			<div class="col-span-2 lg:col-span-3">
 				<h3 class="mb-2 text-xl lg:text-3xl tracking-wide">IT vývoj</h3>
 					
@@ -245,8 +249,8 @@
 					</figure>
 
 					<p class="text-sm tracking-wide">
-						<strong>Michal Holečka</strong>
-						<span> / IT Development Lead</span>
+						<strong class="block md:inline">Michal Holečka </strong>
+						<span><span class="hidden md:inline"> / </span>IT Development Lead</span>
 					</p>
 				</div>
 			</div>
@@ -254,7 +258,7 @@
 			<a class="absolute left-0 top-0 w-full h-full" href=""></a>
 		</section>
 		
-		<section class="home-service relative grid grid-cols-4 grid-row-2 px-4 py-8 lg:py-8 lg:px-12 -mx-4 lg:mx-0 lg:mb-8 lg:rounded-lg bg-quaternary text-white hover:drop-shadow-xl hover:-translate-y-1 transition-transform duration-500" id="devops">
+		<section class="home-service relative grid grid-cols-4 grid-row-2 px-4 py-8 lg:py-8 lg:px-12 mb-4 lg:mb-8 rounded-lg bg-quaternary text-white hover:drop-shadow-xl hover:-translate-y-1 transition-transform duration-500" id="devops">
 			<div class="col-span-2 lg:col-span-3">
 				<h3 class="mb-2 text-xl lg:text-3xl tracking-wide">DevOps a Cloud</h3>
 					
@@ -276,8 +280,8 @@
 					</figure>
 
 					<p class="text-sm tracking-wide">
-						<strong>Gabriel Olekšák</strong>
-						<span> / DevOps and Cloud Lead</span>
+						<strong class="block md:inline">Gabriel Olekšák </strong>
+						<span><span class="hidden md:inline"> / </span>DevOps and Cloud Lead</span>
 					</p>
 				</div>
 			</div>
@@ -285,7 +289,7 @@
 			<a class="absolute left-0 top-0 w-full h-full" href=""></a>
 		</section>
 		
-		<section class="home-service relative grid grid-cols-4 grid-row-2 px-4 py-8 lg:py-8 lg:px-12 -mx-4 lg:mx-0 lg:mb-8 lg:rounded-lg bg-primary text-white hover:drop-shadow-xl hover:-translate-y-1 transition-transform duration-500" id="outsourcing">
+		<section class="home-service relative grid grid-cols-4 grid-row-2 px-4 py-8 lg:py-8 lg:px-12 mb-4 lg:mb-8 rounded-lg bg-primary text-white hover:drop-shadow-xl hover:-translate-y-1 transition-transform duration-500" id="outsourcing">
 			<div class="col-span-2 lg:col-span-3">
 				<h3 class="mb-2 text-xl lg:text-3xl tracking-wide">IT Outsourcing</h3>
 					
@@ -307,8 +311,8 @@
 					</figure>
 
 					<p class="text-sm tracking-wide">
-						<strong>Peter Kontriš </strong>
-						<span> / Outsourcing & HR Lead</span>
+						<strong class="block md:inline">Peter Kontriš </strong>
+						<span><span class="hidden md:inline"> / </span>Outsourcing & HR Lead</span>
 					</p>
 				</div>
 			</div>
@@ -316,14 +320,65 @@
 			<a class="absolute left-0 top-0 w-full h-full" href=""></a>
 		</section>
 
-		<div class="max-w-2xl mx-auto my-12">
+		<div class="max-w-2xl mx-auto my-12 lg:my-16">
 			<p class="lg:text-center text-lg tracking-wide">Ak ste nenašli v zozname služieb to, čo hľadáte, neváhajte nás kontaktovať. <br> Pre vašu spoločnosť vytvoríme <a href="#">IT riešenia na mieru</a>.</p>
 		</div>
 
 		<hr class="border-dotted border-gray-400">
+
+		<section class="py-12 lg:py-16 lg:text-center">
+			<div class="flex justify-center mb-8">
+				<svg width="83" height="44" viewBox="0 0 83 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M63.4848 35.1457C54.5704 23.5057 60.5936 9.94561 60.5936 9.94561C60.5936 9.94561 52.8839 -2.53445 34.5733 0.465566C20.7199 2.74558 11.3237 17.3857 11.3237 17.3857C11.3237 17.3857 12.7692 11.9856 12.7692 8.2656C12.7692 4.78559 11.4441 2.98558 11.4441 2.98558C11.4441 2.98558 9.63716 6.34559 8.19158 6.7056C6.50508 7.1856 5.17997 4.90559 5.17997 4.90559C5.17997 4.90559 4.45718 6.8256 5.17997 10.9056C5.90276 15.3456 8.19158 21.8257 8.19158 21.8257C8.19158 21.8257 6.38462 24.9457 5.17997 28.4257C3.49347 33.1057 2.16836 38.7458 2.16836 38.7458L0 40.7858C0 40.7858 0.722787 41.7458 1.92743 42.3458C2.77068 42.8258 4.09579 42.9458 4.09579 42.9458L4.81858 39.7058C4.81858 39.7058 7.58926 33.3457 16.1422 29.0257C16.865 29.0257 17.4673 29.0257 18.1901 29.1457C18.0697 32.1457 15.6604 36.9457 15.1785 39.9458C14.4557 43.7858 21.0813 30.7057 23.4906 33.3457C23.4906 33.4657 23.611 33.4657 23.611 33.5857C23.7315 33.7057 23.7315 33.7057 23.852 33.8257C27.1045 38.1458 30.357 43.5458 29.9956 40.6658C29.3933 36.4657 26.2612 29.5057 28.1887 26.8657C29.1524 25.0657 31.6821 23.7457 34.5733 23.7457C37.1031 23.7457 39.2714 24.7057 40.4761 26.1457C43.9695 27.8257 38.7896 35.3857 37.5849 40.9058C36.8621 44.0258 41.6807 37.1857 45.8969 33.1057C49.8723 32.0257 56.6183 44.3858 55.5341 40.5458C54.3295 36.2257 52.2816 32.1457 54.209 30.9457C55.0522 31.4257 55.5341 31.7857 55.5341 31.7857C55.5341 31.7857 57.2206 35.9857 62.8824 39.7058C72.0377 45.7058 83 43.6658 83 43.6658C83 43.6658 69.7489 43.1858 63.4848 35.1457Z" fill="#CCA0D7"/>
+					<path fill="blue" />
+				</svg>
+			</div>
+				
+			<div class="max-w-2xl mx-auto mb-4 lg:mb-8 text-primary text-xl lg:text-2xl tracking-wide">
+				<p class="">Klientom poskytujeme konkurenčnú výhodu, ktorá prináša zvýšenie efektivity, zníženie nákladov a minimalizuje zložitosť a chybovosť procesov. </p>
+			</div>
+
+			<div class="max-w-sm mx-auto mb-4 lg:mb-8 text-lg tracking-wide">
+				<p>Spoľahnite sa na naše dlhoročné know-how	v technológiách a inováciách.</p>
+			</div>
+
+			<a class="inline-flex justify-center items-center min-w-[250px] px-8 py-4 mt-1 lg:mt-0 rounded-full bg-primary hover:bg-secondary focus:bg-green text-white font-semibold transition-colors" href="#">Viac o nás</a>
+		</section>
 	</div>
 
-	<div class="extraCss py-2 shadow-lg shadow-grey-400"></div>
+	<section class="relative py-12 lg:py-24 mb-12 lg:mb-16 bg-gray-100 after:absolute after:left-1/2 after:top-0 after:w-0 after:h-0 after:ml-[-50px] after:border-x-[50px] after:border-x-transparent after:border-t-[30px] after:border-t-white">
+		<div class="container">
+			<div class="lg:flex lg:justify-center lg:items-center">
+				<div class="lg:flex lg:flex-1 lg:order-1 lg:justify-center max-w-[120px] lg:max-w-[none] ml-4 lg:ml-0 mb-4 lg:mb-0 float-right lg:float-none">
+					<figure class="relative -left-6 inline-flex after:absolute after:top-0 after:left-0 after:z-10 after:w-full after:h-full after:border after:border-green after:rounded-full">
+						<img class="circles-img relative rounded-full transition-all duration-500" src="./assets/img/divider-home1.jpg" alt="">
+					</figure>
+				</div>
+
+				<div class="lg:flex lg:flex-1 lg:order-2">
+					<article class="lg:pl-12">
+						<h3 class="pr-4 mb-4 text-xl lg:text-2xl text-tertiary tracking-wide">Vzácne know-how</h3>
+
+						<p class="pr-4 mb-6 text-gray-400 tracking-wide">Viac než 10 rokov pôsobíme ako líder v doménach Biznis proces manažment (BPM) a Middleware. Vďaka našim bohatým skúsenostiam dokážeme tvoriť inovatívne a funkčné IT riešenia.</p>
+
+						<hr class="mb-6 border-dotted border-gray-400">			
+						
+						<h3 class="pr-4 mb-4 text-xl lg:text-2xl text-tertiary tracking-wide">Interné aj externé kapacity</h3>
+
+						<p class="pr-4 mb-6 text-gray-400 tracking-wide">Spájame výnimočných ľudí a expertov. Náš tím tvorí viac ako 90 skúsených konzultantov, architektov, analytikov a softvérových inžinierov.</p>
+
+						<hr class="mb-6 border-dotted border-gray-400">		
+						
+						<h3 class="pr-4 mb-4 text-xl lg:text-2xl text-tertiary tracking-wide">Flexibilita a ľudský prístup</h3>
+
+						<p class="pr-4 text-gray-400 tracking-wide">Klientom prinášame extra hodnotu, či už ide o veľké alebo malé projekty. Aj vďaka nášmu flexibilnému a ľudskému prístupu sme do úspešného konca dotiahli množstvo projektov. </p>
+					</article>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="extraCss py-2 shadow-lg shadow-grey-400 translate-x-6 translate-y-5 hidden"></div>
 
 	<script src="./assets/js/custom.js"></script>
 </body>
