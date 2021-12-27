@@ -181,8 +181,11 @@ li.sub-menu-service a.is-active {
 	0% {
 		opacity: 1;
 	}
-	100% {
+	90% {
 		opacity: 0;
+	}
+	100% {
+		display: none;
 	}
 }
 
