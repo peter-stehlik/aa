@@ -127,3 +127,42 @@ li.sub-menu-service a.is-active {
 	transform: translateY(150px);
 }
 
+/*
+*	FOOTER NAVIGATION
+*/
+.footer-menu li {
+	@apply my-1;
+}
+.footer-menu li a {
+	@apply inline-flex py-1;
+}
+.footer-menu li a:hover {
+	@apply text-quaternary;
+}
+.footer-menu li a:focus {
+	@apply text-green;
+}
+
+.copy-nav li {
+	@apply py-1;
+}
+.copy-nav li a {
+	@apply text-secondary;
+}
+.copy-nav li a:hover {
+	@apply text-quaternary;
+}
+.copy-nav li a:focus {
+	@apply text-green;
+}
+@screen lg {
+	.copy-nav {
+		@apply flex items-center pt-3;
+	}
+	.copy-nav li {
+		@apply py-0 pl-2 border-l border-secondary ml-2;
+	}
+	.copy-nav li:first-child {
+		@apply pl-0 ml-0 border-none;
+	}
+}
