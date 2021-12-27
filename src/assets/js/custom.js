@@ -100,7 +100,7 @@ let AA = {
 		let homeService = ($el) => {
 		  let rect = $el.getBoundingClientRect();
 	
-		  if (rect.top >= 0 && rect.bottom + 100 <= (window.innerHeight || document.documentElement.clientHeight)) {
+		  if (rect.top >= 0 && rect.bottom + 50 <= (window.innerHeight || document.documentElement.clientHeight)) {
 			if (!$el.querySelector(".home-service__line").classList.contains("w-full")) {
 			  $el.querySelector(".home-service__line").classList.remove("w-px");
 			  $el.querySelector(".home-service__line").classList.add("w-full");
