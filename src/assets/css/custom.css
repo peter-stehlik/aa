@@ -166,3 +166,47 @@ li.sub-menu-service a.is-active {
 		@apply pl-0 ml-0 border-none;
 	}
 }
+
+/*
+*	PRELOADER
+*/
+.preloader {
+	animation-name: preloader;
+	animation-duration: 500ms;
+	animation-delay: 300ms;
+	animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+	animation-fill-mode: forwards;
+}
+@keyframes preloader {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+/*
+*	COOKIES
+*/
+.cookies {
+	bottom: 40px;
+	left: 40px;
+	z-index: 999;
+	max-width: 300px;
+	padding: 20px;
+	background: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	transform: translateX(-400px);
+	transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	/* Firefox 4 */
+	-webkit-transition: all 0.3s;
+	/* Safari and Chrome */
+	-o-transition: all 0.3s;
+	/* Opera */
+}
+
+.cookies.opened {
+	transform: translateX(0);
+}
