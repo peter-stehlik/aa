@@ -4,6 +4,7 @@
 html,
 body {
 	@apply font-sans text-base text-gray-900;
+	scroll-behavior: smooth;
 }
 p a {
 	@apply text-primary border-b border-primary transition;
@@ -133,6 +134,19 @@ li.sub-menu-service a.is-active {
 #lg-counter,
 #lg-download {
 	display: none !important;
+}
+
+/*
+*	CONTENT
+*/
+
+.content ul li {
+	@apply relative mb-2 pl-8 before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-primary before:rounded-full;
+}
+@screen lg {
+	.content ul {
+		@apply text-lg;
+	}
 }
 
 /*
