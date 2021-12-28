@@ -128,6 +128,14 @@ li.sub-menu-service a.is-active {
 }
 
 /*
+*	CAROUSEL & LIGHTBOX
+*/
+#lg-counter,
+#lg-download {
+	display: none !important;
+}
+
+/*
 *	FOOTER NAVIGATION
 */
 .footer-menu li {
