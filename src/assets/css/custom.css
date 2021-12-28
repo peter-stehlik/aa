@@ -139,7 +139,6 @@ li.sub-menu-service a.is-active {
 /*
 *	CONTENT
 */
-
 .content ul li {
 	@apply relative mb-2 pl-8 before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-primary before:rounded-full;
 }
@@ -147,6 +146,19 @@ li.sub-menu-service a.is-active {
 	.content ul {
 		@apply text-lg;
 	}
+}
+
+/*
+*	ACCORDION
+*/
+.accordion-content {
+	max-height: 0;
+}
+.accordion-content.is-opened {
+	max-height: 1000px;
+}
+.accordion-link.is-active {
+	@apply bg-quaternary bg-opacity-10;
 }
 
 /*

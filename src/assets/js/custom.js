@@ -159,16 +159,102 @@ let AA = {
 			document.getElementById('close-cookies--accept').addEventListener('click', acceptCookies);
 		}
 	},
+	animateValue: function(id, start, end, duration) {
+		// assumes integer values for start and end
+		
+		var obj = document.getElementById(id);
+		var range = end - start;
+		// no timer shorter than 50ms (not really visible any way)
+		var minTimer = 50;
+		// calc step time to show all interediate values
+		var stepTime = Math.abs(Math.floor(duration / range));
+		
+		// never go below minTimer
+		stepTime = Math.max(stepTime, minTimer);
+		
+		// get current time and calculate desired end time
+		var startTime = new Date().getTime();
+		var endTime = startTime + duration;
+		var timer;
+	  
+		function run() {
+			var now = new Date().getTime();
+			var remaining = Math.max((endTime - now) / duration, 0);
+			var value = Math.round(end - (remaining * range));
+			obj.innerHTML = value;
+			if (value == end) {
+				clearInterval(timer);
+			}
+		}
+
+		let $el = document.querySelector(".counter");
+		let rect = $el.getBoundingClientRect();
+	
+		if (rect.top >= 0 && rect.bottom - 100 <= (window.innerHeight || document.documentElement.clientHeight)) {
+			if (!obj.classList.contains("is-active")) {
+				obj.classList.add("is-active");
+
+				timer = setInterval(run, stepTime);
+				run();
+			}
+		}
+
+		let $el2 = document.querySelector(".counter2");
+		let rect2 = $el2.getBoundingClientRect();
+	
+		if (rect2.top >= 0 && rect2.bottom - 100 <= (window.innerHeight || document.documentElement.clientHeight)) {
+			if (!obj.classList.contains("is-active")) {
+				obj.classList.add("is-active");
+
+				timer = setInterval(run, stepTime);
+				run();
+			}
+		}
+	},
+	initAccordion: () => {
+		let accordionLinks = document.querySelectorAll(".accordion-link");
+
+		if( !accordionLinks ){
+			return;
+		}
+
+		let toggle = $el => {
+			$el.addEventListener("click", e => {
+				e.preventDefault();
+				let href = $el.getAttribute("href");
+
+				$el.classList.toggle("is-active");
+				document.getElementById(href).classList.toggle("is-opened");
+			});
+		};
+
+		accordionLinks.forEach( el => toggle(el));
+	},
 }
 
 AA.toggleLangs();
 AA.toggleSubMenuService();
 AA.toggleMobNav();
 AA.cookiePolicy();
+AA.initAccordion();
 
 document.addEventListener('scroll', function(e) {
 	AA.tidyHeader();
 	AA.whenInViewport();
+
+	if( document.getElementById("y1") ){
+		let count_y1 = parseInt(document.getElementById("y1").getAttribute("data-count"));
+		AA.animateValue("y1", 0, count_y1, 600);
+		
+		let count_y2 = parseInt(document.getElementById("y2").getAttribute("data-count"));
+		AA.animateValue("y2", 0, count_y2, 1800);
+
+		let count_y3 = parseInt(document.getElementById("y3").getAttribute("data-count"));
+		AA.animateValue("y3", 0, count_y3, 2400);
+		
+		let count_y4 = parseInt(document.getElementById("y4").getAttribute("data-count"));
+		AA.animateValue("y4", 0, count_y4, 1800);
+	}
 });
 
 window.addEventListener('resize', AA.clearHeaderOnResize);
