@@ -187,6 +187,10 @@ let AA = {
 			}
 		}
 
+		timer = setInterval(run, stepTime);
+		run();
+
+/*
 		let $el = document.querySelector(".counter");
 		let rect = $el.getBoundingClientRect();
 	
@@ -197,19 +201,7 @@ let AA = {
 				timer = setInterval(run, stepTime);
 				run();
 			}
-		}
-
-		let $el2 = document.querySelector(".counter2");
-		let rect2 = $el2.getBoundingClientRect();
-	
-		if (rect2.top >= 0 && rect2.bottom - 100 <= (window.innerHeight || document.documentElement.clientHeight)) {
-			if (!obj.classList.contains("is-active")) {
-				obj.classList.add("is-active");
-
-				timer = setInterval(run, stepTime);
-				run();
-			}
-		}
+		}*/
 	},
 	initAccordion: () => {
 		let accordionLinks = document.querySelectorAll(".accordion-link");
@@ -242,18 +234,31 @@ document.addEventListener('scroll', function(e) {
 	AA.tidyHeader();
 	AA.whenInViewport();
 
-	if( document.getElementById("y1") ){
-		let count_y1 = parseInt(document.getElementById("y1").getAttribute("data-count"));
-		AA.animateValue("y1", 0, count_y1, 600);
-		
-		let count_y2 = parseInt(document.getElementById("y2").getAttribute("data-count"));
-		AA.animateValue("y2", 0, count_y2, 1800);
+	let $counters = document.querySelectorAll(".counter");
+	let initCounter = $el => {
+		let count = parseInt($el.getAttribute("data-count"));
+		let id = $el.getAttribute("id");
+		let interval = 600;
 
-		let count_y3 = parseInt(document.getElementById("y3").getAttribute("data-count"));
-		AA.animateValue("y3", 0, count_y3, 2400);
-		
-		let count_y4 = parseInt(document.getElementById("y4").getAttribute("data-count"));
-		AA.animateValue("y4", 0, count_y4, 1800);
+		if( count > 50 ){
+			interval = 1800;
+		} else if( count > 100 ){
+			interval = 2400;
+		}
+
+		let rect = $el.getBoundingClientRect();
+	
+		if (rect.top >= 0 && rect.bottom - 100 <= (window.innerHeight || document.documentElement.clientHeight)) {
+			if (!$el.classList.contains("is-active")) {
+				$el.classList.add("is-active");
+
+				AA.animateValue(id, 0, count, interval);
+			}
+		}
+	}
+
+	if( $counters.length ){
+		$counters.forEach($el => initCounter($el));
 	}
 });
 

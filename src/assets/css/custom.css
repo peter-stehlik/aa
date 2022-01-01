@@ -15,7 +15,8 @@ p a:hover {
 p a:focus {
 	@apply text-green;
 }
-img {
+img,
+svg {
 	max-width: 100%;
 	height: auto;
 }
@@ -135,12 +136,81 @@ li.sub-menu-service a.is-active {
 #lg-download {
 	display: none !important;
 }
+.glide__slide img {
+	margin: 0 auto 1rem;
+}
+
+/*
+*	COMPONENTS
+*/
+.components .component:first-child .component-wrap {
+	padding-top: 0 !important;
+	border-top: 0 !important;
+}
+.component.has-bg + .component.no-bg .component-wrap {
+	border-top: 0 !important;
+	padding-top: 0 !important;
+}
+.component.has-bg + .component.has-bg {
+	margin-top: 0 !important;
+}
+.component.has-bg + .component.has-bg .bg-arrow {
+	padding-top: 0 !important;
+}
+.component.has-bg + .component.has-bg .bg-arrow:after {
+	display: none !important;
+}
+@screen lg {
+	.component.has-bg + .component.no-bg .component-wrap {
+		padding-top: 2rem !important;
+	}
+}
+
 
 /*
 *	CONTENT
 */
+#detail .content h1,
+#detail .content h2,
+#detail .content h3,
+#detail .content h4 {
+	@apply text-primary;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4 {
+	@apply mb-4 lg:mb-8;
+}
+.content h1 {
+	@apply text-3xl lg:text-6xl;
+}
+.content h2 {
+	@apply text-2xl lg:text-5xl;
+}
+.content h3 {
+	@apply text-xl lg:text-4xl;
+}
+.content h4 {
+	@apply text-lg lg:text-3xl;
+}
+.content p,
+.content ul,
+.content ol {
+	@apply mb-4 lg:mb-8;
+}
 .content ul li {
 	@apply relative mb-2 pl-8 before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-primary before:rounded-full;
+}
+.content *:last-child {
+	@apply mb-0 lg:mb-0;
+}
+.content.text-center img {
+	@apply mx-auto;
+}
+.content hr {
+	@apply mb-6 border-dotted border-gray-400;
 }
 @screen lg {
 	.content ul {
