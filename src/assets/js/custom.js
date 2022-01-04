@@ -189,19 +189,6 @@ let AA = {
 
 		timer = setInterval(run, stepTime);
 		run();
-
-/*
-		let $el = document.querySelector(".counter");
-		let rect = $el.getBoundingClientRect();
-	
-		if (rect.top >= 0 && rect.bottom - 100 <= (window.innerHeight || document.documentElement.clientHeight)) {
-			if (!obj.classList.contains("is-active")) {
-				obj.classList.add("is-active");
-
-				timer = setInterval(run, stepTime);
-				run();
-			}
-		}*/
 	},
 	initAccordion: () => {
 		let accordionLinks = document.querySelectorAll(".accordion-link");
@@ -222,6 +209,45 @@ let AA = {
 
 		accordionLinks.forEach( el => toggle(el));
 	},
+	closePopup: () => {
+		let $popup = document.querySelector(".popup-wrap");
+		$popup.addEventListener('click', function(e){   
+			if (document.querySelector('.popup').contains(e.target)){
+				
+			} else{
+				$popup.classList.toggle("hidden");
+			}
+		});
+	},
+	openPopup: () => {
+		let $jobs = document.querySelectorAll("a[href='#jobs']");
+		let open = $el => {
+			$el.addEventListener("click", e => {
+				e.preventDefault();
+				
+				if( !$el.closest(".component-jobs") && document.getElementById("job-title") ){
+					let job = document.getElementById("job-title").getAttribute("data-title");
+
+					document.getElementById("job-name").value = job;
+				} else {
+					document.getElementById("job-name").value = "general";
+				}
+
+				document.querySelector(".popup-wrap").classList.remove("hidden");
+				document.querySelector("input[name='applicant']").focus();
+			});
+		};
+
+		$jobs.forEach( el => open(el) );
+	},
+	submitSuccess: () => {
+		document.addEventListener( 'wpcf7submit', function( event ) {
+			document.querySelector('.form-wrap').classList.add("hidden");
+			setTimeout(function(){
+				location.reload();
+			}, 3000);
+		}, false );
+	},
 }
 
 AA.toggleLangs();
@@ -229,6 +255,10 @@ AA.toggleSubMenuService();
 AA.toggleMobNav();
 AA.cookiePolicy();
 AA.initAccordion();
+AA.closePopup();
+AA.openPopup();
+AA.submitSuccess();
+
 
 document.addEventListener('scroll', function(e) {
 	AA.tidyHeader();

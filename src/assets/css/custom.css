@@ -6,19 +6,54 @@ body {
 	@apply font-sans text-base text-gray-900;
 	scroll-behavior: smooth;
 }
-p a {
+p a,
+.content ul li a {
 	@apply text-primary border-b border-primary transition;
 }
-p a:hover {
+p a:hover,
+.content ul li a:hover  {
 	@apply text-quaternary border-none;
 }
-p a:focus {
+p a:focus,
+.content ul li a:focus {
 	@apply text-green;
+}
+.button {
+	@apply border-0;
+}
+.button.bg-white {
+	@apply text-primary hover:text-white;
+}
+.button.bg-secondary {
+	@apply text-white hover:text-white;
 }
 img,
 svg {
 	max-width: 100%;
 	height: auto;
+}
+form br {
+	@apply hidden;
+}
+.inputfile {
+	@apply block w-full text-sm text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-quaternary file:text-primary hover:file:bg-quaternary;
+}
+form p:empty {
+	@apply hidden;
+}
+input[type="text"],
+input[type="email"],
+form textarea {
+	@apply w-full max-w-sm px-4 py-2 rounded-lg focus:outline-none bg-green focus:ring focus:ring-primary;
+}
+form textarea {
+	@apply max-w-full h-24;
+	padding: .5rem 1rem !important;
+	resize: none;
+}
+.wpcf7-response-output {
+	padding: 1rem !important;
+	@apply border-secondary rounded-lg text-lg;
 }
 
 /*
@@ -130,7 +165,7 @@ li.sub-menu-service a.is-active {
 }
 
 /*
-*	CAROUSEL & LIGHTBOX
+*	CAROUSEL & LIGHTBOX & POPUP
 */
 #lg-counter,
 #lg-download {
@@ -138,6 +173,29 @@ li.sub-menu-service a.is-active {
 }
 .glide__slide img {
 	margin: 0 auto 1rem;
+}
+@screen lg {
+	.glide__slide p {
+		margin: 1rem 1.5rem 0;
+	}
+}
+.popup {
+	animation: popup 500ms forwards;
+	animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+@keyframes popup {
+	0% {
+		opacity: 0;
+		transform: translateX(30px) translateY(-30px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0) translateX(0);
+	}
+}
+input:placeholder-shown,
+textarea:placeholder-shown {
+    @apply bg-quaternary;
 }
 
 /*
@@ -160,9 +218,16 @@ li.sub-menu-service a.is-active {
 .component.has-bg + .component.has-bg .bg-arrow:after {
 	display: none !important;
 }
+.component-plain_text.no-bg:first-child {
+	margin-top: 0 !important;
+	padding-top: 3rem !important;
+}
 @screen lg {
 	.component.has-bg + .component.no-bg .component-wrap {
 		padding-top: 2rem !important;
+	}
+	.component-plain_text.no-bg:first-child {
+		padding-top: 4rem !important;
 	}
 }
 
@@ -181,19 +246,19 @@ li.sub-menu-service a.is-active {
 .content h2,
 .content h3,
 .content h4 {
-	@apply mb-4 lg:mb-8;
+	@apply mb-4;
 }
 .content h1 {
 	@apply text-3xl lg:text-6xl;
 }
 .content h2 {
-	@apply text-2xl lg:text-5xl;
+	@apply text-2xl lg:text-4xl;
 }
 .content h3 {
-	@apply text-xl lg:text-4xl;
+	@apply text-xl lg:text-3xl;
 }
 .content h4 {
-	@apply text-lg lg:text-3xl;
+	@apply text-lg lg:text-2xl;
 }
 .content p,
 .content ul,
@@ -210,7 +275,10 @@ li.sub-menu-service a.is-active {
 	@apply mx-auto;
 }
 .content hr {
-	@apply mb-6 border-dotted border-gray-400;
+	@apply mb-8 border-dotted border-gray-400;
+}
+.button + .button {
+	@apply sm:ml-2 md:ml-0 xl:ml-2 mt-4 sm:mt-0 md:mt-4 xl:mt-0;
 }
 @screen lg {
 	.content ul {
