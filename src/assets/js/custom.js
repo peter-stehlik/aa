@@ -234,8 +234,18 @@ let AA = {
 					let job = document.getElementById("job-title").getAttribute("data-title");
 
 					document.getElementById("job-name").value = job;
+
+					gtag('event', 'submit', {
+						'event_category': 'button',
+						'event_label': 'mam-zaujem',
+					});
 				} else {
 					document.getElementById("job-name").value = "general";
+
+					gtag('event', 'submit', {
+						'event_category': 'button',
+						'event_label': 'poslat-zivotopis',
+					});
 				}
 
 				document.getElementById("jobsFormWrap").classList.remove("hidden");
@@ -284,6 +294,11 @@ let AA = {
 				setTimeout(function(){
 					location.reload();
 				}, 3000);
+			});
+
+			gtag('event', 'submit', {
+				'event_category': 'button',
+				'event_label': 'odoslany-form'
 			});
 		}, false );
 	},
