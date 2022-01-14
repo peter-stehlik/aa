@@ -211,6 +211,11 @@ let AA = {
 	},
 	closePopup: () => {
 		let $popup = document.querySelector(".popup-wrap");
+
+		if( !$popup ){
+			return;
+		}
+
 		$popup.addEventListener('click', function(e){   
 			if (document.querySelector('.popup').contains(e.target)){
 				
@@ -219,7 +224,7 @@ let AA = {
 			}
 		});
 	},
-	openPopup: () => {
+	openPopupJobs: () => {
 		let $jobs = document.querySelectorAll("a[href='#jobs']");
 		let open = $el => {
 			$el.addEventListener("click", e => {
@@ -233,6 +238,9 @@ let AA = {
 					document.getElementById("job-name").value = "general";
 				}
 
+				document.getElementById("jobsFormWrap").classList.remove("hidden");
+				document.getElementById("contactFormWrap").classList.add("hidden");
+				
 				document.querySelector(".popup-wrap").classList.remove("hidden");
 				document.querySelector("input[name='applicant']").focus();
 			});
@@ -240,12 +248,43 @@ let AA = {
 
 		$jobs.forEach( el => open(el) );
 	},
+	openPopupContact: () => {
+		let $contact = document.querySelectorAll("a[href='#service']");
+		let open = $el => {
+			$el.addEventListener("click", e => {
+				e.preventDefault();
+
+				let url = window.location.href;
+				let urlArr = url.split('/');
+				urlArr.shift();
+				urlArr.shift();
+				urlArr.shift();
+				let page = urlArr.join(" | ");
+
+				if( !page ){
+					page = 'home-page';
+				}
+
+				document.getElementById("service-name").value = page;
+
+				document.getElementById("jobsFormWrap").classList.add("hidden");
+				document.getElementById("contactFormWrap").classList.remove("hidden");
+				
+				document.querySelector(".popup-wrap").classList.remove("hidden");
+				document.querySelector("input[name='customer']").focus();
+			});
+		};
+
+		$contact.forEach( el => open(el) );
+	},
 	submitSuccess: () => {
 		document.addEventListener( 'wpcf7submit', function( event ) {
-			document.querySelector('.form-wrap').classList.add("hidden");
-			setTimeout(function(){
-				location.reload();
-			}, 3000);
+			document.querySelectorAll('.form-wrap').forEach(el => {
+				el.classList.add("hidden");
+				setTimeout(function(){
+					location.reload();
+				}, 3000);
+			});
 		}, false );
 	},
 }
@@ -256,7 +295,8 @@ AA.toggleMobNav();
 AA.cookiePolicy();
 AA.initAccordion();
 AA.closePopup();
-AA.openPopup();
+AA.openPopupJobs();
+AA.openPopupContact();
 AA.submitSuccess();
 
 

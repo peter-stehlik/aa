@@ -285,6 +285,9 @@ textarea:placeholder-shown {
 		@apply text-lg;
 	}
 }
+.landing-svg-wrap svg {
+	width: 500px;
+}
 
 /*
 *	ACCORDION
@@ -344,7 +347,7 @@ textarea:placeholder-shown {
 */
 .preloader {
 	animation-name: preloader;
-	animation-duration: 500ms;
+	animation-duration: 1000ms;
 	animation-delay: 300ms;
 	animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
 	animation-fill-mode: forwards;
