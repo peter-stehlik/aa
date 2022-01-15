@@ -201,6 +201,13 @@ textarea:placeholder-shown {
 /*
 *	COMPONENTS
 */
+.components {
+	padding-top: 4rem;
+}
+.components .component:first-child {
+	margin-top: 0;
+}
+
 .components .component:first-child .component-wrap {
 	padding-top: 0 !important;
 	border-top: 0 !important;
@@ -218,17 +225,18 @@ textarea:placeholder-shown {
 .component.has-bg + .component.has-bg .bg-arrow:after {
 	display: none !important;
 }
+/*
 .component-plain_text.no-bg:first-child {
 	margin-top: 0 !important;
 	padding-top: 3rem !important;
-}
+}*/
 @screen lg {
 	.component.has-bg + .component.no-bg .component-wrap {
 		padding-top: 2rem !important;
 	}
-	.component-plain_text.no-bg:first-child {
+	/*.component-plain_text.no-bg:first-child {
 		padding-top: 4rem !important;
-	}
+	}*/
 }
 
 
