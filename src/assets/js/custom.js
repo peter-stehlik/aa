@@ -3,12 +3,23 @@ let AA = {
 	$subNavServices: document.querySelector(".sub-nav-services"),
 
 	toggleLangs: () => {
-		document.querySelector(".js-lang-toggler").addEventListener("click", (event) => {
+		let $el = document.querySelector(".js-lang-toggler"); 
+		
+		if( !$el ) {
+			return;
+		}
+		
+		$el.addEventListener("click", (event) => {
 			document.querySelector(".js-langs-wrap").classList.toggle("is-opened");
 		});
 	},
 	toggleSubMenuService: () => {
 		let $serviceSubMenu = document.querySelector(".sub-menu-service a");
+
+		if( !$serviceSubMenu ){
+			return;
+		}
+
 		$serviceSubMenu.addEventListener("click", (event) => {
 			let $el = AA.$subNavServices;
 			
@@ -40,6 +51,10 @@ let AA = {
 		let y = window.scrollY;
 		let $header = document.querySelector("header");
 
+		if( !$header ) {
+			return;
+		}
+
 		if( y > 50 ){			
 			$header.classList.remove("lg:py-7", "py-2");
 			$header.classList.add("lg:py-1", "py-0", "shadow-grey-500", "shadow-lg");
@@ -49,7 +64,13 @@ let AA = {
 		}
 	},
 	toggleMobNav: () => {
-		document.querySelector(".js-nav-toggler").addEventListener("click", () => {
+		let $el = document.querySelector(".js-nav-toggler");
+		
+		if( !$el ) {
+			return;
+		}
+
+		$el.addEventListener("click", () => {
 			let $hamburger = document.querySelector("#hamburger");
 
 			if( $hamburger.classList.contains("is-opened") ){
@@ -226,6 +247,11 @@ let AA = {
 	},
 	openPopupJobs: () => {
 		let $jobs = document.querySelectorAll("a[href='#jobs']");
+
+		if( !$jobs ){
+			return;
+		}
+
 		let open = $el => {
 			$el.addEventListener("click", e => {
 				e.preventDefault();
@@ -260,6 +286,11 @@ let AA = {
 	},
 	openPopupContact: () => {
 		let $contact = document.querySelectorAll("a[href='#service']");
+
+		if( !$contact ){
+			return;
+		}
+
 		let open = $el => {
 			$el.addEventListener("click", e => {
 				e.preventDefault();
@@ -302,8 +333,25 @@ let AA = {
 			});
 		}, false );
 	},
+	translator: () => {
+		let $el = document.querySelectorAll(".js-translate");
+
+		if( !$el ){
+			return;
+		}
+
+		$el.forEach( el => {
+			let lang = document.getElementById("lang").value;
+			let translation = el.getAttribute("data-" + lang);
+
+			if( translation ){
+				el.innerHTML = translation;
+			}
+		});
+	},
 }
 
+AA.translator();
 AA.toggleLangs();
 AA.toggleSubMenuService();
 AA.toggleMobNav();
