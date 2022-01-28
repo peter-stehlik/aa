@@ -47,7 +47,7 @@ form textarea {
 	@apply w-full max-w-sm px-4 py-2 rounded-lg focus:outline-none bg-green focus:ring focus:ring-primary;
 }
 form textarea {
-	@apply max-w-full h-24;
+	@apply max-w-full h-16;
 	padding: .5rem 1rem !important;
 	resize: none;
 }

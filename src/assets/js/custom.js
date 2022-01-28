@@ -258,8 +258,13 @@ let AA = {
 				
 				if( !$el.closest(".component-jobs") && document.getElementById("job-title") ){
 					let job = document.getElementById("job-title").getAttribute("data-title");
+					let jobId = document.getElementById("job-title").getAttribute("data-job-id");
 
-					document.getElementById("job-name").value = job;
+					if( jobId ){
+						jobId = ", ID: " + jobId;
+					}
+
+					document.getElementById("job-name").value = job + jobId;
 
 					gtag('event', 'submit', {
 						'event_category': 'button',
