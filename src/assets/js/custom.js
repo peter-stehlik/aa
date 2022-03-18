@@ -148,38 +148,6 @@ let AA = {
 			$circleImgs.forEach((el) => circlesImgs(el));	
 		}
 	},
-	cookiePolicy:() => {
-		let $cookies = document.getElementById('cookies');
-
-		if ($cookies) {
-			let toggleCookies = function toggleCookies() {
-				document.getElementById('cookies').classList.toggle("opened");
-			};
-			let acceptCookies = function acceptCookies() {
-				if (typeof Storage !== "undefined") {
-					localStorage.cookies = true;
-					let d = new Date();
-					let acceptedAt = d.getTime();
-					localStorage.acceptedAt = parseInt(acceptedAt);
-				}
-
-				toggleCookies();
-			};
-			let now = new Date();
-			let nowTime = now.getTime();
-
-			if (localStorage.cookies === 'true') {
-				if (nowTime - localStorage.acceptedAt > 900000000) {
-					localStorage.cookies = false;
-					toggleCookies();
-				}
-			} else {
-				toggleCookies();
-			}
-
-			document.getElementById('close-cookies--accept').addEventListener('click', acceptCookies);
-		}
-	},
 	animateValue: function(id, start, end, duration) {
 		// assumes integer values for start and end
 		
@@ -360,7 +328,6 @@ AA.translator();
 AA.toggleLangs();
 AA.toggleSubMenuService();
 AA.toggleMobNav();
-AA.cookiePolicy();
 AA.initAccordion();
 AA.closePopup();
 AA.openPopupJobs();
