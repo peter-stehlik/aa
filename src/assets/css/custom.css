@@ -295,6 +295,7 @@ textarea:placeholder-shown {
 }
 .landing-svg-wrap svg {
 	width: 500px;
+	max-height: 333px;
 }
 
 /*
