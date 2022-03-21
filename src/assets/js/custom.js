@@ -286,6 +286,12 @@ let AA = {
 				
 				document.querySelector(".popup-wrap").classList.remove("hidden");
 				document.querySelector("input[name='customer']").focus();
+
+				gtag('event', 'submit', {
+					'event_category': 'Mám záujem o službu',
+					'event_action': 'Mám záujem o službu',
+					'event_label': 'Mám záujem o službu',
+				});
 			});
 		};
 
@@ -300,10 +306,19 @@ let AA = {
 				}, 3000);
 			});
 
-			gtag('event', 'submit', {
-				'event_category': 'button',
-				'event_label': 'odoslany-form'
-			});
+			if( document.querySelector(".single") ){
+				gtag('event', 'submit', {
+					'event_category': 'button',
+					'event_label': 'odoslany-form'
+				});
+			} else {
+				gtag('event', 'submit', {
+					'event_category': 'Služba - button - odoslať',
+					'event_action': 'Služba - button - odoslať',
+					'event_label': 'Služba - button - odoslať',
+				});
+			}
+
 		}, false );
 	},
 	translator: () => {
